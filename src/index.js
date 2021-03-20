@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {Provider} from "react-redux";
+import {createStore} from 'redux';
+import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
+import reducer from "./reducer";
+import './index.css';
+import 'antd/dist/antd.css';
+
+
+const initialState = {
+    result:[],
+    resultCard:[],
+    page:1,
+    statusModal:false,
+    infoPersonaje:{},
+};
+const store = createStore(reducer,initialState);
 
 ReactDOM.render(
-  <React.StrictMode>
+    <Provider store={store}>
     <App />
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 

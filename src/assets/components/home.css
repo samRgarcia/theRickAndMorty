@@ -1,0 +1,13 @@
+.card-flexs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.card-flexs-size{
+    max-width: 80%;
+    margin: 0 auto;
+}
