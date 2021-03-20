@@ -10,8 +10,8 @@ const Paginacion = ({setPaginacionCount, setPageCount, page,result}) => {
     }, [result]);
 
     const onChange = page => {
-        let start = (5 * page) - 5;
-        let end = 5 * page;
+        let start = (10 * page) - 10;
+        let end = 10 * page;
         setPaginacionCount({start, end})
         setPageCount(page)
 
@@ -22,7 +22,7 @@ const Paginacion = ({setPaginacionCount, setPageCount, page,result}) => {
             style={{margin:'auto'}}
             current={page}
             onChange={onChange}
-            total={50}/>);
+            total={result.length}/>);
 }
 
 const mapStateToProps = state => {
